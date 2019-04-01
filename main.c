@@ -5,6 +5,8 @@
 int main(void) {
 
 	Node* n1 = newList();
+	printList(n1);
+	insert(&n1, 8);
 
 	return EXIT_SUCCESS;
 }

@@ -18,5 +18,7 @@ struct Node {
 };
 
 Node* newList();
+void printList(Node* list);
+void insert(Node** listPtr, int value);
 
 #endif /* ORDEREDLINKEDLIST_H_ */

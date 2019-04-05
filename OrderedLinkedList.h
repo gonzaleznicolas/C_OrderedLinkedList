@@ -20,5 +20,6 @@ struct Node {
 Node* newList();
 void printList(Node* list);
 void insert(Node** listPtr, int value);
+int removeElt(Node** listPtr, int valueToRemove); // returns 0 if the valueToRemove was not found, one if it was found and removed
 
 #endif /* ORDEREDLINKEDLIST_H_ */

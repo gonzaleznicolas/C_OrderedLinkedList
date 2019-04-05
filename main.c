@@ -20,5 +20,9 @@ int main(void) {
 	printList(n1);
 	insert(&n1, 7);
 	printList(n1);
+	removeElt(&n1, 7);
+	printList(n1);
+	removeElt(&n1, 7);
+	printList(n1);
 	return EXIT_SUCCESS;
 }

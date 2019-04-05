@@ -51,3 +51,17 @@ void insert(Node** listPtr, int value){
 	}
 
 }
+
+int removeElt(Node** listPtr, int valueToRemove){
+	Node* currentNode = *listPtr;
+	if (currentNode == NULL) {
+		return 0;
+	}
+	if (currentNode->val == valueToRemove){
+		*listPtr = currentNode->next;
+		free(currentNode);
+		return 0;
+	}
+	return 0;
+
+}

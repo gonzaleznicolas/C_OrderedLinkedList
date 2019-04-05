@@ -24,5 +24,11 @@ int main(void) {
 	printList(n1);
 	removeElt(&n1, 7);
 	printList(n1);
+	removeElt(&n1, 9);
+	printList(n1);
+	removeElt(&n1, 12);
+	printList(n1);
+	removeElt(&n1, 12);
+	printList(n1);
 	return EXIT_SUCCESS;
 }

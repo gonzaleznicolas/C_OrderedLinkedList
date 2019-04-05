@@ -54,14 +54,31 @@ void insert(Node** listPtr, int value){
 
 int removeElt(Node** listPtr, int valueToRemove){
 	Node* currentNode = *listPtr;
-	if (currentNode == NULL) {
+	if (currentNode == NULL) // if list empty
+	{
 		return 0;
 	}
-	if (currentNode->val == valueToRemove){
+	else if (currentNode->val == valueToRemove) // if first element is the one to remove
+	{
 		*listPtr = currentNode->next;
 		free(currentNode);
+		return 1;
+	}
+	else
+	{
+		Node* trailingNodePtr = *listPtr;
+		currentNode = trailingNodePtr->next;
+		while(currentNode != NULL)
+		{
+			if(currentNode->val == valueToRemove){
+				trailingNodePtr->next = currentNode->next;
+				free(currentNode);
+				return 1;
+			}
+			trailingNodePtr = trailingNodePtr->next;
+			currentNode = currentNode->next;
+		}
 		return 0;
 	}
-	return 0;
 
 }

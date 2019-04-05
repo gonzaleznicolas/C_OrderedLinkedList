@@ -8,6 +8,17 @@ int main(void) {
 	printList(n1);
 	insert(&n1, 8);
 	printList(n1);
-
+	insert(&n1, 7);
+	printList(n1);
+	insert(&n1, 12);
+	printList(n1);
+	insert(&n1, 9);
+	printList(n1);
+	insert(&n1, 9);
+	printList(n1);
+	insert(&n1, 12);
+	printList(n1);
+	insert(&n1, 7);
+	printList(n1);
 	return EXIT_SUCCESS;
 }

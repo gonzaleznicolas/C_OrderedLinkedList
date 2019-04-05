@@ -15,10 +15,11 @@ Node* newList(){
 
 void printList(Node* list){
 
-	while(list != NULL){
-		printf("%d,", list->val);
+	Node* currentNode = list;
+	while(currentNode != NULL){
+		printf("%d,", currentNode->val);
 		fflush(stdout);
-		list = list->next;
+		currentNode = currentNode->next;
 	}
 
 	printf("NULL\n");
@@ -26,11 +27,27 @@ void printList(Node* list){
 }
 
 void insert(Node** listPtr, int value){
-	if(*listPtr == NULL)
+	Node* newNode = (Node*) malloc(sizeof(Node));
+	newNode->val = value;
+
+	Node* currentNode = *listPtr;
+	if(currentNode == NULL)
 	{
-		Node* newNode = (Node*) malloc(sizeof(Node));
-		newNode->val = value;
 		newNode->next = NULL;
 		*listPtr = newNode;
 	}
+	else if (newNode->val < currentNode->val) // insert at front
+	{
+		newNode->next = currentNode;
+		*listPtr = newNode;
+	}
+	else
+	{
+		while(currentNode->next != NULL && currentNode->next->val < newNode->val)
+			currentNode = currentNode->next;
+
+		newNode->next = currentNode->next;
+		currentNode->next = newNode;
+	}
+
 }
